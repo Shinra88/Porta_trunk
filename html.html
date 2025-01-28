@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DEVIS</title>
+    <style>
+        .html body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            width: 95%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page,
+        .page2 {
+            box-sizing: border-box;
+            position: relative;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .page2 p {
+            text-align: center;
+            font-size: 10px;
+            font-weight: bold;
+            color: rgb(177, 3, 3);
+        }
+
+        .page {
+            display: flex;
+            page-break-after: always;
+        }
+
+        .header,
+        .content,
+        .footer {
+            width: 100%;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .header img {
+            width: 130px;
+        }
+
+        .title {
+            display: flex;
+            flex-direction: column;
+            background-color: #B03C8A;
+            border: gray solid 1px;
+            border-radius: 5px;
+            color: white;
+            padding: 15px 0px 15px 30px;
+            width: 33%;
+            height: 40%;
+        }
+
+        .title h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .title h6 {
+            text-align: right;
+            margin: 0;
+            padding-right: 10px;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            padding: 15px 0px 15px 30px;
+            width: 33%;
+        }
+
+        .solidaire {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .logos {
+            display: block;
+            margin-right: 10px;
+            width: 15%;
+            height: auto;
+        }
+
+        .logo h5 {
+            font-size: 14x;
+            margin: 0.7em;
+        }
+
+        .section-title_name {
+            background-color: #B03C8A;
+            border: gray solid 1px;
+            border-radius: 5px;
+            color: white;
+            width: 100%
+        }
+
+        .section-title_name h5 {
+            margin: 8px 0 8px 0;
+        }
+
+        .section-title h5 {
+            padding-left: 35px;
+        }
+
+        .section-title_block {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 35px 0px 35px;
+            margin: 35px 0px 35px 0px;
+        }
+
+        .section-title_list {
+            padding-left: 35px;
+            font-size: 12px;
+            font-weight: bolder;
+            width: 45%;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .content p {
+            margin: 5px 0;
+            line-height: 1.6;
+        }
+
+        .annotation {
+            text-align: center;
+        }
+
+        .annotation a {
+            color: #B03C8A;
+            text-decoration: none;
+        }
+
+        .annotation a:hover {
+            text-decoration: underline;
+        }
+
+        .annotation h6 {
+            margin: 10px;
+        }
+
+        .legal_notice {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 130px;
+            margin-bottom: 130px;
+        }
+
+        .legal_notice_left,
+        .legal_notice_right {
+            width: 50%;
+            padding: 0px 35px 0px 35px;
+        }
+
+        .legal_notice_right {
+            text-align: right;
+        }
+
+        .legal_notice h5 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 5px;
+            color: #B03C8A;
+        }
+
+        .Materiel {
+            padding: 30px;
+        }
+
+        .infosTech h5 {
+            padding: 5px;
+            margin: 0;
+            text-align: center;
+            background-color: #B03C8A;
+            border: gray solid 1px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .infosTech {
+            margin-top: 20px;
+        }
+
+        .infosTech h6 {
+            padding: 10px 0px 10px 35px;
+            background-color: white;
+            color: black;
+        }
+
+        .infosTech h4 {
+            padding-top: 35px;
+            background-color: white;
+            color: black;
+            text-align: center;
+        }
+
+        .price h5 {
+            padding: 5px;
+            margin: 0;
+            text-align: center;
+            background-color: #B03C8A;
+            border: gray solid 1px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .eligi {
+            border-bottom: 1px solid gray;
+            margin: 0;
+        }
+
+        .com {
+            height: 80px;
+            margin-top: 0px;
+        }
+
+        .table {
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .table_hl {
+            border-top-left-radius: 5px;
+        }
+
+        .table_hr {
+            border-top-right-radius: 5px;
+        }
+
+        .table th {
+            background-color: #B03C8A;
+            border: gray solid 1px;
+            color: white;
+            padding: 8px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .table td {
+            border: gray solid 1px;
+            padding: 8px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .total {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 10px 0px 10px;
+            margin-top: 20px;
+            font-weight: bolder;
+            border: gray solid 1px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .total h6,
+        .totalSimu h6 {
+            margin: 5px;
+        }
+
+        .nb {
+            margin-left: 35px;
+        }
+
+        .nb h6 {
+            color: rgb(177, 3, 3);
+            font-weight: bold;
+        }
+
+        .nb h5 {
+            text-decoration: underline;
+        }
+
+        .footer {
+            font-size: 10px;
+            color: white;
+            background-color: #B03C8A;
+            border: gray solid 1px;
+            border-radius: 5px;
+            width: 99%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .footer div {
+            text-align: center;
+        }
+
+        .footer h5 {
+            text-align: right;
+        }
+
+        .intitule {
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .click {
+            width: 15px;
+        }
+
+        .clickD {
+            width: 15px;
+            transform: rotateY(3.142rad);
+        }
+
+        @media print {
+            .footer {
+                position: fixed;
+                bottom: 0;
+            }
+
+            .page {
+                page-break-after: always;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <header class="header">
+            <div class="logo"> <img
+                    src="https://v5.airtableusercontent.com/v3/u/34/34/1731081600000/bgCEQC3s7UFf10cdG8Ao-Q/EC8uQiKwtxxj0QLe1yzXmOYPhf4o1fQkIUxynoIUrYHB5xM0dfkZBPgZ-LVJzU1LJKWLF-plBXdcPfsY1Hdh9N2iPXAFnM8WmYN5lM2UwhjhEAmIHzkmNJt0Bbu3Vd3muAr_md303F6HkGkmrw3Snq67QuR7TSkgUq7hb47BZHrIEXmEbXCrN4sCQa0nogkk/0mC94QDhPUXbR8QwO_FwfA0gHeYLoxMQLW7YNAeMM2Y"
+                    alt="Logo Fonia">
+                <div>
+                    <h5>30 CHEMIN DE L’AVIATION</h5>
+                    <h5>64200 BASSUSSARRY</h5>
+                    <h5>TEL: 05 64 115 115</h5>
+                    <h5>FAX: 09 74 53 15 43</h5>
+                </div>
+            </div>
+            <div class="title">
+                <h1>DEVIS N°CO9</h1>
+                <h4>Date du devis: 2024-10-31</h4>
+                <h6>Page 1</h6>
+            </div>
+        </header>
+        <div class="intitule">
+            <h2>INTITULÉ: Film</h2>
+        </div>
+        <div class="content"> <!-- Section société -->
+            <div class="section-title">
+                <div class="section-title_name">
+                    <h5>Société</h5>
+                </div>
+                <div class="section-title_block">
+                    <div class="section-title_list">
+                        <p><strong>Nom / Raison social :</strong> Testwin</p>
+                        <p><strong>Téléphone :</strong> 0450016828</p>
+                        <p><strong>Email :</strong> win@jmail.com</p>
+                        <p><strong>Siret :</strong> 48926589556618</p>
+                    </div>
+                    <div class="section-title_list">
+                        <p><strong>Ville :</strong> st Fransisco</p>
+                        <p><strong>Adresse :</strong> 1 île de la péninsule</p>
+                        <p><strong>Code postal :</strong> 65830</p>
+                        <p><strong>Complément d’adresse :</strong> au font a gauche</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section-title">
+                <div class="section-title_name">
+                    <h5>Partenaire</h5>
+                </div>
+                <div class="section-title_block">
+                    <div class="section-title_list">
+                        <p><strong>Prénom :</strong> OKSIO BONNEVAL Olivier</p>
+                        <p><strong>Email :</strong> oksio@fonia.fr</p>
+                    </div>
+                </div>
+            </div> <!-- Section solidaire -->
+            <div class="solidaire"> <img class="logos"
+                    src="https://v5.airtableusercontent.com/v3/u/34/34/1731081600000/ciKme8o7hdBKRBjgt5W8aA/qde1Nm7aFdiwcKgvS8rc0lpNI7pJkqD4TRxB7ls0h7lkTUQv5qdnszQtDqHmLKPoUSTXfTJhEOFT5reW0qNdHpoEUDbgxtLWzP_rYvSjDDQ79bE1wuQM3lzETSpCJ43CUp054GzPOqJQNaajLZiURiymxaBC2Wc3i1OU1ps48F0/0CGUqrEBsG4sbPzuNY2eDWV32Eg-T2VM6novdjLmpv8"
+                    alt="Logo Solidarité">
+                <h4>En choisissant un produit Itzatel chez Fonia, vous contribuez à notre engagement de reverser 1% de
+                    notre chiffre d'affaires à des associations caritatives. Votre élan solidaire s'élève à 1.6039 €.
+                </h4>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div>
+            <p>SARL FONIA - 30 CHEMIN DE L’AVIATION - 64200 BASSUSSARRY - TEL: 05 64 115 115 - FAX: 09 74 53 15 43 -
+                WWW.FONIA.FR - CONTACT@FONIA.FR</p>
+            <p>SIRET: 50286388900056 - APE: 6202A - VAT INTRACOM FR52502863889</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+<div class="page2">
+    <header class="header">
+        <div> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWJFYfcaWQBnzG7fh4PDsCHZFjmM6TUMGYtg&s"
+                alt=""> </div>
+        <div class="title">
+            <h1>DEVIS N°CO9</h1>
+            <h4>Date du devis: 2024-10-31</h4>
+            <h6>Page 2</h6>
+        </div>
+    </header>
+    <section class="infosTech">
+        <h5>SIMULATION</h5>
+        <h4 class="com">D’après les informations transmises, veuillez trouver une étude des coûts supplémentaires
+            mensuels:</h4>
+    </section>
+    <section class="total">
+        <h5>Total Conso Fixe <br> ( 1.12€ )</h5>
+        <h5>Total Conso Mobile <br> ( 16.04€ )</h5>
+        <h5>Total Conso voix HT <br> ( 17.15€ )</h5>
+        <h5>TVA 20% <br> ( 3.43€ )</h5>
+        <h5>Total Conso voix TTC <br> ( 20.58€ )</h5>
+    </section>
+    <section class="camembert"
+        style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 350px; text-align: center; margin-top: 60px;">
+        <h5 style="font-size: 1.4em; font-weight: bold; margin-bottom: 20px;">Répartition de la consommation :</h5>
+        <div
+            style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; width: 100%; font-weight: bold;">
+            <svg width="300" height="300" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <circle r="16" cx="16" cy="16" fill="#E0E0E0" />
+                <path d="M16 16 L 16 0 A 16 16 0 0 1 22.379089666156126 1.3266494953899457 Z" fill="#8Ebb13" />
+                <path d="M16 16 L 22.379089666156126 1.3266494953899457 A 16 16 0 1 1 16 0 Z" fill="#B03C8A" />
+            </svg>
+            <div style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+                <div style="display: flex; align-items: center; margin-right: 20px;">
+                    <div style="width: 20px; height: 20px; background-color: #8Ebb13; margin-right: 5px;"></div> <span
+                        style="font-weight: bold;">Fixe (6.5%)</span>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <div style="width: 20px; height: 20px; background-color: #B03C8A; margin-right: 5px;"></div> <span
+                        style="font-weight: bold;">Mobile (93.5%)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div class="page2">
+    <header class="header">
+        <div> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWJFYfcaWQBnzG7fh4PDsCHZFjmM6TUMGYtg&s"
+                alt=""> </div>
+        <div class="title">
+            <h1>DEVIS N°CO9</h1>
+            <h4>Date du devis: 2024-10-31</h4>
+            <h6>Page 3</h6>
+        </div>
+    </header>
+    <section class="infosTech">
+        <h5>INFORMATION TECHNIQUE</h5>
+        <h6 class="eligi">NUMÉRO D’ÉLIGIBILITÉ : </h6>
+        <h6 class="com">COMMENTAIRES DE LIVRAISON OU AUTRES : Movie</h6>
+    </section>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="table_hl">Produit</th>
+                <th>Quantité</th>
+                <th>Engagement <br> ( mois )</th>
+                <th>Abonnement <br> ( /mois )</th>
+                <th>Remise Abonnement</th>
+                <th>Total abonnement</th>
+                <th>FAS</th>
+                <th>Remise FAS</th>
+                <th class="table_hr">Total FAS *</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>YATOUBOX 2022 Fibre FTTH</td>
+                <td>1</td>
+                <td>Durée 36 mois</td>
+                <td>99.90€</td>
+                <td>4.90€</td>
+                <td>95.00€</td>
+                <td>0.00€</td>
+                <td>0.00€</td>
+                <td>0.00€</td>
+            </tr>
+            <tr>
+                <td>Fonia Pro Max Europe</td>
+                <td>1</td>
+                <td>Sans</td>
+                <td>60.49€</td>
+                <td>5.49€</td>
+                <td>55.00€</td>
+                <td>9.00€</td>
+                <td>3.00€</td>
+                <td>6.00€</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>* Frais d'accès au service</p>
+    <section class="total">
+        <h5>Total HT ABO <br> ( 0.00€ ) <br> <br> Total HT FAS <br> ( 0.00€ ) </h5>
+        <h5>TVA 20% ABO <br> ( 0.00€ ) <br><br> TVA 20% FAS <br> ( 0.00€ ) </h5>
+        <h5>TTC ABO <br> ( 0.00€ ) <br><br> TTC FAS <br> ( 0.00€ ) </h5>
+    </section>
+</div>
+<div class="page2">
+    <header class="header">
+        <div> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWJFYfcaWQBnzG7fh4PDsCHZFjmM6TUMGYtg&s"
+                alt=""> </div>
+        <div class="title">
+            <h1>DEVIS N°CO9</h1>
+            <h4>Date du devis: 2024-10-31</h4>
+            <h6>Page 4</h6>
+        </div>
+    </header>
+    <section class="infosTech">
+        <h5>Options</h5>
+    </section>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="table_hl">OPTION</th>
+                <th>Quantité</th>
+                <th>Abonnement HT</th>
+                <th>Remise Abo</th>
+                <th>Total Abonnement HT</th>
+                <th>FAS</th>
+                <th>Remise FAS</th>
+                <th class="table_hr">Total FAS HT</th>
+                <th>Engagement</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>IP Fixe (Internet Only)</td>
+                <td>1</td>
+                <td>7.30€</td>
+                <td>0.30€</td>
+                <td>7.00€</td>
+                <td>0.00€</td>
+                <td>0.00€</td>
+                <td>0.00€</td>
+                <td>Durée 1 mois</td>
+            </tr>
+            <tr>
+                <td>Numéro facile à retenir</td>
+                <td>2</td>
+                <td>0.00€</td>
+                <td>0.00€</td>
+                <td>0.00€</td>
+                <td>50.00€</td>
+                <td>10.00€</td>
+                <td>80.00€</td>
+                <td>Sans</td>
+            </tr>
+        </tbody>
+    </table>
+    <section class="total">
+        <h6>Total HT base ABO <br> ( 7.00€ )</h6>
+        <h6>Total remise ABO <br> ( 0.30€ )</h6>
+        <h6>Total HT ABO <br> ( 6.70€ )</h6>
+        <h6>Total HT base FAS <br> ( 80.00€ )</h6>
+        <h6>Total remise FAS <br> ( 10.00€ )</h6>
+        <h6>Total HT FAS <br> ( 70.00€ )</h6>
+        <h6>Total HT options <br> ( 76.70€ )</h6>
+        <h6>TVA 20% <br> ( 15.34€ )</h6>
+        <h6>TTC options <br> ( 92.04€ )</h6>
+    </section>
+</div>
+<div class="page2">
+    <header class="header">
+        <div> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWJFYfcaWQBnzG7fh4PDsCHZFjmM6TUMGYtg&s"
+                alt=""> </div>
+        <div class="title">
+            <h1>DEVIS N°CO9</h1>
+            <h4>Date du devis: 2024-10-31</h4>
+            <h6>Page 5</h6>
+        </div>
+    </header>
+    <section class="infosTech">
+        <h5>INFORMATION MATERIEL</h5>
+    </section>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="table_hl">Matériel</th>
+                <th>Quantité</th>
+                <th>Garantie</th>
+                <th>Prix HT</th>
+                <th>Remise</th>
+                <th class="table_hr">Total HT</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>rootest</td>
+                <td>2</td>
+                <td>24 mois</td>
+                <td>120.00€</td>
+                <td>20.00€</td>
+                <td>200.00€</td>
+            </tr>
+        </tbody>
+    </table>
+    <section class="total">
+        <h6>Total HT base matériel <br> ( 240.00€ )</h6>
+        <h6>Total remise matériel <br> ( 20.00€ )</h6>
+        <h6>Total HT matériel <br> ( 200.00€ )</h6>
+        <h6>TVA 20% matériel <br> ( 40.00€ )</h6>
+        <h6>TTC matériel <br> ( 240.00€ )</h6>
+    </section>
+</div>
+<div class="page2">
+    <header class="header">
+        <div> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWJFYfcaWQBnzG7fh4PDsCHZFjmM6TUMGYtg&s"
+                alt=""> </div>
+        <div class="title">
+            <h1>DEVIS N°CO9</h1>
+            <h4>Date du devis: 2024-10-31</h4>
+            <h6>Page 6</h6>
+        </div>
+    </header>
+    <section class="infosTech">
+        <h5>Prestations</h5>
+    </section>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="table_hl">Prestation</th>
+                <th>Quantité</th>
+                <th>Prix HT</th>
+                <th>Remise</th>
+                <th class="table_hr">Total HT</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Presta 4 de test</td>
+                <td>1</td>
+                <td>50.00€</td>
+                <td>8.00€</td>
+                <td>42.00€</td>
+            </tr>
+        </tbody>
+    </table>
+    <section class="total">
+        <h6>Total HT base prestations <br> ( 50.00€ )</h6>
+        <h6>Total remise prestations <br> ( 8.00€ )</h6>
+        <h6>Total HT prestations <br> ( 42.00€ )</h6>
+        <h6>TVA 20% prestations <br> ( 8.40€ )</h6>
+        <h6>TTC prestations <br> ( 50.40€ )</h6>
+    </section>
+</div>
+<div class="page2">
+    <header class="header">
+        <div> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWJFYfcaWQBnzG7fh4PDsCHZFjmM6TUMGYtg&s"
+                alt=""> </div>
+        <div class="title">
+            <h1>DEVIS N°CO9</h1>
+            <h4>Date du devis: 31/10/2024</h4>
+            <h6>Page 7</h6>
+        </div>
+    </header>
+    <section class="legal_notice" style="margin-bottom: 130px;">
+        <div class="legal_notice_left">
+            <h5>DEVIS: Film</h5>
+            <h6>La signature de ce devis entraîne l’acceptation des conditions générales de vente en vigueur ainsi que
+                des conditions spécifiques se rapportant aux produits ou services souscrits dans ce devis</h6>
+        </div>
+        <div class="legal_notice_right">
+            <h5>SIGNATURE NUMÉRIQUE</h5> <signature-field
+                style="width: 160px; height: 80px; display: inline-block;"></signature-field>
+            <h6>Bon pour accord</h6> <checkbox-field
+                style="width: 160px; height: 25px; display: inline-block;"></checkbox-field>
+        </div>
+    </section> <span class="annotation" style="margin-bottom: 130px;"> <a
+            href="https://c.mondrive.pro/s/gREXREB3zeWPDsM" style="display: flex; align-items: center;"> <img
+                src="https://v5.airtableusercontent.com/v3/u/34/34/1731081600000/PLrpRBan4Qno2c8FByN2ow/nQYH3fsQ78owMnu5geR9TL053HH-VmFCcBXskhEIjmF4J45QhVUp1LSkXSQ5DPvt-9xn4tCa8VZ0mXUpKzWkvfsJJ8SfRzuNmv_PK3Er-RzyLs-poYaEHUJDeH5Z2uSjvuzq9tgBbJeQhedG2lKgzQ/LhW7uUcmitWdYHYUMMDD6DCn9IQc8wClOgas_Gat_k8"
+                alt="Icon clic" style="margin-right: 10px;" class="clickD" />
+            <h6>CGV, CONDITIONS SPÉCIFIQUES, PRIX PUBLICS ET CONDITIONS DES COMMUNICATIONS FIXES ET MOBILES</h6> <img
+                src="https://v5.airtableusercontent.com/v3/u/34/34/1731081600000/PLrpRBan4Qno2c8FByN2ow/nQYH3fsQ78owMnu5geR9TL053HH-VmFCcBXskhEIjmF4J45QhVUp1LSkXSQ5DPvt-9xn4tCa8VZ0mXUpKzWkvfsJJ8SfRzuNmv_PK3Er-RzyLs-poYaEHUJDeH5Z2uSjvuzq9tgBbJeQhedG2lKgzQ/LhW7uUcmitWdYHYUMMDD6DCn9IQc8wClOgas_Gat_k8"
+                alt="Icon clic" style="margin-left: 10px;" class="click" />
+        </a> </span>
+    <div class="nb">
+        <h6>N.B. : Nos prélèvements sont effectués via Gocardless ( Merci de prévenir vos services comptabilité )</h6>
+        <h5>La validité de ce devis est de 30 jours à date d’émission.</h5>
+    </div>
+</div>"
