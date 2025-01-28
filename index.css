@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.field-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-left: 20%;
+}
+
+.field-group label {
+    display: inline-block;
+    padding-inline: 10px;
+}
+
+.field-group input {
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.button-container button {
+    margin-right: 10px;
+}
+
+#add-field-button, #add-single-number-button {
+    background-color: #B03C8A;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 2px 2px 15px grey;
+}
+
+.error-message {
+    color: red;
+    display: none;
+    margin-top: 5px;
+}
